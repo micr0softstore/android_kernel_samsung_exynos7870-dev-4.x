@@ -3,6 +3,10 @@
 # Cryptographic API
 #
 
+#Keep this on the top
+obj-$(CONFIG_CRYPTO_FIPS) += first_file.o
+obj-$(CONFIG_CRYPTO_FIPS) += fips_integrity.o
+
 obj-$(CONFIG_CRYPTO) += crypto.o
 crypto-y := api.o cipher.o compress.o memneq.o
 
@@ -154,3 +158,7 @@ obj-$(CONFIG_CRYPTO_HASH_INFO) += hash_info.o
 obj-$(CONFIG_CRYPTO_ABLK_HELPER) += ablk_helper.o
 crypto_simd-y := simd.o
 obj-$(CONFIG_CRYPTO_SIMD) += crypto_simd.o
+
+#Keep this at the bottom
+obj-$(CONFIG_CRYPTO_FIPS) += last_file.o
+
